@@ -1,0 +1,130 @@
+/* Set the size of the map */
+#map {
+    height: calc(100vh - 100px); /* Adjust height based on the header size */
+    width: 100%;
+    min-height: 300px; /* Prevents issues with resizing */
+}
+
+html, body {
+    height: 100%;
+    overflow-y: hidden;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the map takes up remaining space */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    color: rgb(37, 37, 69);
+    font-size: 22px;
+}
+
+#showAll {
+    margin-top: 15px;
+    border-radius: 8px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    z-index: 5;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease; /* Smooth hover transition */
+}
+
+#showAll:hover {
+    background-color: #f0f0f0; /* Hover effect for button */
+}
+
+#category-selector {
+    border-radius: 8px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 15px; /* Increased padding for consistency */
+    z-index: 5;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Increased spacing for clarity */
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid #000;
+}
+
+#date-selector {
+    font-size: 18px; /* Slightly smaller for mobile friendliness */
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    background: white;
+    padding: 15px; /* Consistent padding with other elements */
+    z-index: 5;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.custom-marker-label {
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.6); /* Black background with some transparency */
+    border-radius: 4px; /* Rounded corners */
+    padding: 5px 10px; /* Padding for better spacing */
+    color: white; /* White text color */
+    font-size: 12px; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center the label text */
+    min-width: 50px; /* Minimum width for better visibility */
+}
+
+@media screen and (max-width: 768px) {
+    #map {
+        height: calc(100vh - 150px); /* Adjust height for smaller screens */
+    }
+
+    h1 {
+        font-size: 18px; /* Make the title more responsive */
+    }
+
+    #showAll, #category-selector, #date-selector {
+        padding: 10px; /* Smaller padding for smaller screens */
+    }
+
+    #showAll {
+        top: 60px; /* Adjusted positioning for mobile */
+    }
+
+    #date-selector {
+        top: 50px;
+    }
+}
